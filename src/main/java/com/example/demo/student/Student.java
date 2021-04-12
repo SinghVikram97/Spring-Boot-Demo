@@ -2,6 +2,7 @@ package com.example.demo.student;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity // @Entity annotation defines that a class can be mapped to a table.
 @Table // Specifies that it should be mapped to a table
@@ -21,25 +22,25 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
+
+    @Transient // This field shouldn't have column it will calculated for us, modify getAge function below
     private Integer age;
 
     public Student() {
     }
 
-    public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+    public Student(Long id, String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 
-    public Student(String name, String email, LocalDate dob, Integer age) {
+    public Student(String name, String email, LocalDate dob) {
         // Without id because db will generate id for us
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 
     public Long getId() {
@@ -75,7 +76,7 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob,LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
