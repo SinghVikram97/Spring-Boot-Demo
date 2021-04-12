@@ -1,8 +1,22 @@
 package com.example.demo.student;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity // @Entity annotation defines that a class can be mapped to a table.
+@Table // Specifies that it should be mapped to a table
 public class Student {
+
+    @Id
+    @SequenceGenerator(
+            name="student_sequence",
+            sequenceName="student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
     private Long id;
     private String name;
     private String email;
