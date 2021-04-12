@@ -1,9 +1,11 @@
 CLIENT
   |
-API LAYER  (GET,POST,PUT,DELETE)
+API LAYER  (GET,POST,PUT,DELETE) (STUDENT CONTROLLER)
   |
 SERVICE LAYER (BUSINESS LOGIC)
   |
 DATA ACCESS LAYER (FOR INTERACTING WITH DB)
   |
 DATABASE
+
+On making a request: Round trip-> Client - API - Service Layer - Data Access Layer - Database and then back to Data access layer - Service layer - API layer - Client
