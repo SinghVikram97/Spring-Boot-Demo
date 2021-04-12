@@ -11,11 +11,11 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
 
-    // This will transform into an sql as SELECT * FROM student WHERE email='?'
+    // Query method will transform into an sql as SELECT * FROM student WHERE email='?'
     // Or we can annotate it
 
-//    @Query("SELECT s FROM Student s WHERE s.email=?1")  // This Student is our entity/class not table
-    // Query method
+    // @Query("SELECT s FROM Student s WHERE s.email=?1")  // This Student is our entity/class not table, can specify query like this or
+    // Query method below
     Optional<Student> findStudentByEmail(String email);
 
 }
