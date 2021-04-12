@@ -11,9 +11,9 @@ import java.util.List;
 @RequestMapping(path="api/v1/student") // Specify path etc. for this endpoint
 public class StudentController {
 
-    private final StudentService studentService; // How to tell studentService should be injected here in constructor
+    private final StudentService studentService;
 
-    @Autowired
+    @Autowired // https://stackoverflow.com/questions/3153546/how-does-autowiring-work-in-spring
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }

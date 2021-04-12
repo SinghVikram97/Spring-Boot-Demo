@@ -2,7 +2,7 @@ CLIENT
   |
 API LAYER  (GET,POST,PUT,DELETE) (STUDENT CONTROLLER)
   |
-SERVICE LAYER (BUSINESS LOGIC)
+SERVICE LAYER (BUSINESS LOGIC) (STUDENT SERVICE)
   |
 DATA ACCESS LAYER (FOR INTERACTING WITH DB)
   |
@@ -11,3 +11,9 @@ DATABASE
 On making a request: Round trip-> Client - API - Service Layer - Data Access Layer - Database and then back to Data access layer - Service layer - API layer - Client
 
 Dependency Injection- In software engineering, dependency injection is a technique in which an object receives other objects that it depends on
+
+Bean- https://stackoverflow.com/questions/17193365/what-in-the-world-are-spring-beans
+
+Autowiring -
+https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowired
+https://stackoverflow.com/questions/10604298/spring-component-versus-bean
