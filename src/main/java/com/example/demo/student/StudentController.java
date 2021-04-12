@@ -1,19 +1,19 @@
 package com.example.demo.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @RestController // Makes the class serve rest endpoints
 @RequestMapping(path="api/v1/student") // Specify path etc. for this endpoint
 public class StudentController {
 
-    private final StudentService studentService;
+    private final StudentService studentService; // How to tell studentService should be injected here in constructor
 
+    @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
