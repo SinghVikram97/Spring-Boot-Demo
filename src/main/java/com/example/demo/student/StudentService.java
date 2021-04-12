@@ -3,9 +3,8 @@ package com.example.demo.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 //@Component
@@ -24,6 +23,11 @@ public class StudentService {
     }
 
     public void addNewStudent(Student student) {
-        System.out.println(student);
+        Optional<Student> studentOptional = studentRepository.findStudentByEmail(student.getEmail());
+        if(studentOptional.isPresent()){
+            // Already exists in database
+            throw new IllegalStateException("Email taken");
+        }
+        studentRepository.save(student);
     }
 }

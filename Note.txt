@@ -17,3 +17,5 @@ Bean- https://stackoverflow.com/questions/17193365/what-in-the-world-are-spring-
 Autowiring -
 https://stackoverflow.com/questions/34172888/difference-between-bean-and-autowired
 https://stackoverflow.com/questions/10604298/spring-component-versus-bean
+
+https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-introduction-to-query-methods/
